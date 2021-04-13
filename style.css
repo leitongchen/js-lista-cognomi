@@ -1,10 +1,8 @@
 main {
-    min-height: 100vh; */
+    min-height: 100vh; 
+    font-family: 'New Tegomin', serif;
 }
 
-section {
-    font-family: 'Cinzel', serif;
-}
 
 #bg_got {
     background-image: url(../js-lista-cognomi/img/game-thrones-map.jpg);
@@ -14,11 +12,12 @@ section {
 }
 
 h1 {
-    font-family: 'New Tegomin', serif;
+    /* font-family: 'New Tegomin', serif; */
     font-size: 3rem;
     text-transform: uppercase;
 
-    color: rgb(243, 78, 78);
+    color: rgb(255, 255, 255);
+    text-shadow: 5px 5px 5px #202020;
 
     margin-bottom: 20px;
 }
