@@ -37,7 +37,7 @@ while (n < surnameListUppercase.length) {
     if (userSurname === watchedSurname) {
 
         existingSurname = true;
-        alert("Il cognome che hai inserito è già presente nel nostro indice.")
+        alert("Il cognome " + userSurname + " che hai inserito è già presente nel nostro indice.")
 
     }
 
@@ -72,10 +72,18 @@ infoBContainer.innerHTML = "Consulta l'elenco delle casate di Westeros in ordine
 //stampare l'elenco dei cognomi con la numerazione
 for (var j = 0; j < alphabeticList.length; j++) {
 
-    surnamesContainer.innerHTML += "<li>" + (j+1) + " " + alphabeticList[j] + "</li>";
+    if (userSurname === alphabeticList[j]) {
+        surnamesContainer.innerHTML += "<li><span class='selected_name'>" + (j+1) + " " + alphabeticList[j] + "</span></li>";
+
+        
+    } else {
+        surnamesContainer.innerHTML += "<li>" + (j+1) + " " + alphabeticList[j] + "</li>";
+
+    }
+
     //console.log((j + 1) + " " + alphabeticList[j]);
 
-    
+
 }
 
 

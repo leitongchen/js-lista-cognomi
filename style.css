@@ -47,6 +47,8 @@ section p {
     max-height: 450px;
     
     overflow: auto;
+
+    margin: 0;
 }
 
 #surnames-list-container li {
