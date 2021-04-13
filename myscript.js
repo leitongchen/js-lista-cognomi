@@ -68,7 +68,7 @@ var listPosition = alphabeticList.indexOf(userSurname.toUpperCase());
 
 
 infoAContainer.innerHTML = "Il cognome <span class='selected_name'> <strong>" + (userSurname.toUpperCase()) + "</strong></span> <br> si trova alla posizione <span class='selected_name'><strong>" + (listPosition + 1) + "</strong></span>.";
-infoBContainer.innerHTML = "Consulta l'elenco delle casate di Westeros in ordine alfabetico: "
+infoBContainer.innerHTML = "Cerca il tuo cognome nell'elenco delle casate di Westeros: "
 //stampare l'elenco dei cognomi con la numerazione
 for (var j = 0; j < alphabeticList.length; j++) {
 
