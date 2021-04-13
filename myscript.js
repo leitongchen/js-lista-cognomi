@@ -1,28 +1,8 @@
 var surnameList = ["Lannister", "Stark", "Tyrell", "Greyjoy", "Martell", "Bolton", "Tully", "Targaryen", "Baratheon", "Arryn", "Frey", "Tarly", "Mormont"];
 
 
-// Controllo dell'input dell'utente
-var inputDetected = false
-do {
-
-    var userSurname = prompt("Il cognome che inserirai verrà inserito nell'elenco delle più prestigiose casate di Westeros.").trim();
-
-    if (parseInt(userSurname)) {
-        alert("Il tuo input non è valido. Prego inserire solo caratteri dell'alfabeto.")
-    }
-    else if (userSurname !== null && userSurname !== "") {
-
-        surnameList.push(userSurname);
-        inputDetected = true;
-
-    }
-
-} while (!inputDetected);
-
-
 // trasformare i cognomi in uppercase
 var surnameListUppercase = [];
-
 for (var i = 0; i < surnameList.length; i++) {
 
     surnameListUppercase.push(surnameList[i].toUpperCase());
@@ -30,42 +10,84 @@ for (var i = 0; i < surnameList.length; i++) {
 }
 
 
-// ordinare i cognomi in ordine alfabetico
-var alphabeticList = surnameListUppercase.sort();
+// Controllo dell'input dell'utente
+var inputDetected = false
+do {
 
+    var userSurname = prompt("Il cognome che inserirai verrà inserito nell'elenco delle più prestigiose casate di Westeros.").trim().toUpperCase();
 
-//Determinare la posizione del cognome inserito in userSurname 
+    if (parseInt(userSurname)) {
+        alert("Il tuo input non è valido. Prego inserire solo caratteri dell'alfabeto.")
 
-var listPosition = alphabeticList.indexOf(userSurname.toUpperCase());
+    } else if (userSurname !== null && userSurname !== "") {
 
-console.log("Il tuo cognome si trova alla posizione " + (listPosition + 1) + ".");
-console.log("Qui di seguito l'elenco dei cognomi in ordine alfabetico: " + alphabeticList.join(", "))
+        
+        inputDetected = true;
 
-//stampare l'elenco dei cognomi con la numerazione
-for (var j = 0; j < alphabeticList.length; j++) {
+    }
 
-    console.log((j + 1) + " " + alphabeticList[j]);
+} while (!inputDetected);
+
+var n = 0;
+var existingSurname = false;
+
+while (n < surnameListUppercase.length) {
+
+    var watchedSurname = surnameListUppercase[n];
+
+    if (userSurname === watchedSurname) {
+
+        existingSurname = true;
+        alert("Il cognome che hai inserito è già presente nel nostro indice.")
+
+    }
+
+    n++
+}
+
+if (!existingSurname) {
+
+    surnameListUppercase.push(userSurname);
 
 }
 
 
 
+// ordinare i cognomi in ordine alfabetico
+var alphabeticList = surnameListUppercase.sort();
+
+//Determinare la posizione del cognome inserito in userSurname 
+var listPosition = alphabeticList.indexOf(userSurname.toUpperCase());
+
+console.log("Il tuo cognome " + (userSurname.toUpperCase()) + " si trova alla posizione " + (listPosition + 1) + ".");
+console.log("Qui di seguito l'elenco delle casate di Westeros in ordine alfabetico:")
+
+//stampare l'elenco dei cognomi con la numerazione
+for (var j = 0; j < alphabeticList.length; j++) {
+    console.log((j + 1) + " " + alphabeticList[j]);
+}
 
 
 
 
+/* var i = 0;
+while (i < surnameList.length) {
 
+    var watchedSurname = surnameList[i];
+    var existingSurname = false;
 
+    if (userSurname === watchedSurname) {
 
+        alert("Il cognome che vuoi inserire è già presente nel nostro indice.")
 
+    } else {
 
+        surnameList.push(userSurname);
+        inputDetected = true;
 
-
-
-
-
-
-
+    }
+    i++
+} */
 
 
 
