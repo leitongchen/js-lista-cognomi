@@ -1,4 +1,4 @@
-var surnameList = ["Lannister", "Stark", "Tyrell", "Greyjoy", "Martell", "Bolton", "Tully", "Targaryen", "Baratheon", "Arryn", "Frey", "Tarly", "Mormont"];
+var surnameList = [ "Stark", "Baratheon", "Lannister", "Tyrell", "Tully", "Greyjoy", "Martell", "Arryn", "Bolton", "Umber", "Karstark", "Reed", "Glover", "Mormont", "Flint", "Hornwood", "Manderly", "Dustin", "Tallhart", "Cerwyn", "Ryswell", "Mallister", "Frey", "Whent", "Bracken", "Blackwood", "Vance", "Piper", "Mooton", "Darry", "Smallwood", "Westerling", "Payne", "Clegane", "Swyft", "Crakehall", "Marbrand", "Greenfield", "Lorch", "Yarwyck", "Hetherspoon", "Lefford", "Royce", "Waynwood", "Corbray", "Egen", "Hunter", "Lynderly", "Templeton", "Baelish", "Hightower", "Redwyne", "Tarly", "Oakheart", "Peake", "Fossoway", "Florent", "Merryweather", "Rowan", "Uller", "Yronwood", "Dayne", "Allyrion", "Blackmont", "Jordayne", "Gargalen", "Qorgyle", "Santagar", "Manwoody", "Dalt", "Selmy", "Dondarrion", "Swann", "Caron", "Tarth", "Errol", "Estermont", "Morrigen", "Trant", "Wylde", "Musgood", "Grandison", "Peasebury", "Harlaw", "Goodbrother", "Drumm", "Blacktyde", "Botley", "Merlyn", "Sparr", "Humble", "Rosby", "Massey", "Rykker", "Stokeworth", "Celtigar", "Velaryon", "Gaunt", "Chelsted", "Blount", "Thorne", "Targaryen"];
 
 
 // trasformare i cognomi in uppercase
@@ -8,7 +8,6 @@ for (var i = 0; i < surnameList.length; i++) {
     surnameListUppercase.push(surnameList[i].toUpperCase());
 
 }
-
 
 // Controllo dell'input dell'utente
 var inputDetected = false
@@ -21,16 +20,16 @@ do {
 
     } else if (userSurname !== null && userSurname !== "") {
 
-        
+
         inputDetected = true;
 
     }
 
 } while (!inputDetected);
 
+//controllo se il cognome esiste già nell'array surnameList
 var n = 0;
 var existingSurname = false;
-
 while (n < surnameListUppercase.length) {
 
     var watchedSurname = surnameListUppercase[n];
@@ -52,6 +51,9 @@ if (!existingSurname) {
 }
 
 
+var surnamesContainer = document.getElementById("surnames-list-container");
+var infoAContainer = document.getElementById("info-A-container");
+var infoBContainer = document.getElementById("info-B-container");
 
 // ordinare i cognomi in ordine alfabetico
 var alphabeticList = surnameListUppercase.sort();
@@ -59,12 +61,21 @@ var alphabeticList = surnameListUppercase.sort();
 //Determinare la posizione del cognome inserito in userSurname 
 var listPosition = alphabeticList.indexOf(userSurname.toUpperCase());
 
-console.log("Il tuo cognome " + (userSurname.toUpperCase()) + " si trova alla posizione " + (listPosition + 1) + ".");
-console.log("Qui di seguito l'elenco delle casate di Westeros in ordine alfabetico:")
 
+
+//console.log("Il tuo cognome " + (userSurname.toUpperCase()) + " si trova alla posizione " + (listPosition + 1) + ".");
+//console.log("Qui di seguito l'elenco delle casate di Westeros in ordine alfabetico:")
+
+
+infoAContainer.innerHTML = "Il cognome <span class='selected_name'> <strong>" + (userSurname.toUpperCase()) + "</strong></span> <br> si trova alla posizione <span class='selected_name'><strong>" + (listPosition + 1) + "</strong></span>.";
+infoBContainer.innerHTML = "Consulta l'elenco delle casate di Westeros in ordine alfabetico: "
 //stampare l'elenco dei cognomi con la numerazione
 for (var j = 0; j < alphabeticList.length; j++) {
-    console.log((j + 1) + " " + alphabeticList[j]);
+
+    surnamesContainer.innerHTML += "<li>" + (j+1) + " " + alphabeticList[j] + "</li>";
+    //console.log((j + 1) + " " + alphabeticList[j]);
+
+    
 }
 
 

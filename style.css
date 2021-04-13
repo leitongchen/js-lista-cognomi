@@ -1,0 +1,59 @@
+main {
+    min-height: 100vh; */
+}
+
+#bg_got {
+    background-image: url(../js-lista-cognomi/img/game-thrones-map.jpg);
+    background-size: cover;
+
+    padding: 50px
+}
+
+h1 {
+    font-family: 'New Tegomin', serif;
+    font-size: 3rem;
+
+    color: white;
+    margin: 0;
+}
+
+h4 {
+    color: white;
+    margin: 20px 0;
+}
+
+section p {
+    color: white;
+
+}
+
+.gray_container {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.title_box {
+    padding: 15px 30px;
+
+    margin-bottom: 10px;
+}
+
+.shadow_box {
+    padding: 40px 80px
+
+}
+
+#surnames-list-container {
+    min-height: 50vh;
+    max-height: 450px;
+    
+    overflow: auto;
+}
+
+#surnames-list-container li {
+    font-weight: 800;
+    color: white;
+}
+
+.selected_name {
+    color: rgb(243, 78, 78);
+}
