@@ -73,11 +73,11 @@ infoBContainer.innerHTML = "Consulta l'elenco delle casate di Westeros in ordine
 for (var j = 0; j < alphabeticList.length; j++) {
 
     if (userSurname === alphabeticList[j]) {
-        surnamesContainer.innerHTML += "<li><span class='selected_name'>" + (j+1) + " " + alphabeticList[j] + "</span></li>";
+        surnamesContainer.innerHTML += "<li><span class='selected_name'>" + (j+1) + "  -  " + alphabeticList[j] + "</span></li>";
 
         
     } else {
-        surnamesContainer.innerHTML += "<li>" + (j+1) + " " + alphabeticList[j] + "</li>";
+        surnamesContainer.innerHTML += "<li>" + (j+1) + "  -  " + alphabeticList[j] + "</li>";
 
     }
 
