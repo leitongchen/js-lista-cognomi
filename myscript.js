@@ -2,10 +2,10 @@ var surnameList = [ "Stark", "Baratheon", "Lannister", "Tyrell", "Tully", "Greyj
 
 
 // trasformare i cognomi in uppercase
-var surnameListUppercase = [];
+var surnameListLowercase = [];
 for (var i = 0; i < surnameList.length; i++) {
 
-    surnameListUppercase.push(surnameList[i].toUpperCase());
+    surnameListLowercase.push(surnameList[i].toLowerCase());
 
 }
 
@@ -13,12 +13,14 @@ for (var i = 0; i < surnameList.length; i++) {
 var inputDetected = false
 do {
 
-    var userSurname = prompt("Il cognome che inserirai verrà inserito nell'elenco delle più prestigiose casate di Westeros.").trim().toUpperCase();
+    var userSurname = prompt("Il cognome che inserirai verrà inserito nell'elenco delle più prestigiose casate di Westeros.").trim().toLowerCase();
 
-    if (parseInt(userSurname)) {
+    var possibleNumber = parseInt(userSurname);
+
+    if (!Number.isNaN(possibleNumber)) {
         alert("Il tuo input non è valido. Prego inserire solo caratteri dell'alfabeto.")
 
-    } else if (userSurname !== null && userSurname !== "") {
+    } else if (userSurname !== null && userSurname !== "" && userSurname !== undefined) {
 
 
         inputDetected = true;
@@ -30,9 +32,9 @@ do {
 //controllo se il cognome esiste già nell'array surnameList
 var n = 0;
 var existingSurname = false;
-while (n < surnameListUppercase.length) {
+while (n < surnameListLowercase.length) {
 
-    var watchedSurname = surnameListUppercase[n];
+    var watchedSurname = surnameListLowercase[n];
 
     if (userSurname === watchedSurname) {
 
@@ -46,7 +48,7 @@ while (n < surnameListUppercase.length) {
 
 if (!existingSurname) {
 
-    surnameListUppercase.push(userSurname);
+    surnameListLowercase.push(userSurname);
 
 }
 
@@ -56,10 +58,10 @@ var infoAContainer = document.getElementById("info-A-container");
 var infoBContainer = document.getElementById("info-B-container");
 
 // ordinare i cognomi in ordine alfabetico
-var alphabeticList = surnameListUppercase.sort();
+var alphabeticList = surnameListLowercase.sort();
 
 //Determinare la posizione del cognome inserito in userSurname 
-var listPosition = alphabeticList.indexOf(userSurname.toUpperCase());
+var listPosition = alphabeticList.indexOf(userSurname.toLowerCase());
 
 
 

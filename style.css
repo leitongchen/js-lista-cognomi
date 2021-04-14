@@ -33,7 +33,7 @@ section p {
 }
 
 .gray_container {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
 }
 
@@ -60,6 +60,8 @@ section p {
 #surnames-list-container li {
     font-weight: 800;
     color: white;
+
+    text-transform: capitalize;
 }
 
 .selected_name {
